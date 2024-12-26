@@ -49,8 +49,8 @@ class adcli (
   Optional[String] $ad_join_domain_controller = $adcli::params::ad_join_domain_controller,
   Array[String] $ad_join_service_names        = $adcli::params::ad_join_service_names,
   Optional[String] $ad_join_computer_name     = $adcli::params::ad_join_computer_name,
-  String $ad_join_os                          = $adcli::params::ad_join_os,
-  String $ad_join_os_version                  = $adcli::params::ad_join_os_version,
+  Optional[String] $ad_join_os                = $adcli::params::ad_join_os,
+  Optional[String] $ad_join_os_version        = $adcli::params::ad_join_os_version,
   Optional[String] $ad_join_os_service_pack   = $adcli::params::ad_join_os_service_pack,
 ) inherits adcli::params {
 
