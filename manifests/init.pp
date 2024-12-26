@@ -42,26 +42,17 @@
 # Copyright 2016 Aaron Johnson
 #
 class adcli (
-  $ad_domain                 = $adcli::params::ad_domain,
-  $ad_join_username          = $adcli::params::ad_join_username,
-  $ad_join_password          = $adcli::params::ad_join_password,
-  $ad_join_ou                = $adcli::params::ad_join_ou,
-  $ad_join_domain_controller = $adcli::params::ad_join_domain_controller,
-  $ad_join_service_names     = $adcli::params::ad_join_service_names,
-  $ad_join_computer_name     = $adcli::params::ad_join_computer_name,
-  $ad_join_os                = $adcli::params::ad_join_os,
-  $ad_join_os_version        = $adcli::params::ad_join_os_version,
-  $ad_join_os_service_pack   = $adcli::params::ad_join_os_service_pack,
+  String $ad_domain                 = $adcli::params::ad_domain,
+  String $ad_join_username          = $adcli::params::ad_join_username,
+  String $ad_join_password          = $adcli::params::ad_join_password,
+  String $ad_join_ou                = $adcli::params::ad_join_ou,
+  String $ad_join_domain_controller = $adcli::params::ad_join_domain_controller,
+  String $ad_join_service_names     = $adcli::params::ad_join_service_names,
+  String $ad_join_computer_name     = $adcli::params::ad_join_computer_name,
+  String $ad_join_os                = $adcli::params::ad_join_os,
+  String $ad_join_os_version        = $adcli::params::ad_join_os_version,
+  String $ad_join_os_service_pack   = $adcli::params::ad_join_os_service_pack,
 ) inherits adcli::params {
-  validate_legacy(String, 'validate_string', $ad_domain)
-  validate_legacy(String, 'validate_string', $ad_join_username)
-  validate_legacy(String, 'validate_string', $ad_join_password)
-  validate_legacy(String, 'validate_string', $ad_join_ou)
-  validate_legacy(String, 'validate_string', $ad_join_domain_controller)
-  validate_legacy(String, 'validate_string', $ad_join_computer_name)
-  validate_legacy(String, 'validate_string', $ad_join_os)
-  validate_legacy(String, 'validate_string', $ad_join_os_version)
-  validate_legacy(String, 'validate_string', $ad_join_os_service_pack)
 
   anchor { 'adcli::begin': }
   -> class { '::adcli::install': }
